@@ -77,6 +77,10 @@ app.post("/api/receive-bet", (req, res) => {
 
 app.use("/api/user", require("./routes/user"));
 
+app.get("/", (req, res) => {
+  res.send("✅ Backend is running");
+});
+
 
 // app.listen(PORT, () => {
 //   console.log(`🚀 Backend running at http://localhost:${PORT}`);
