@@ -23,6 +23,10 @@ const UserSchema = new mongoose.Schema({
     type: Number,
     default: 1, // 0 => draft, 1 => publish (active), 2 => deactivated, 3 => deleted
   },
+  site_token: {
+    type: String,
+    default: null,
+  },
   created_at: {
     type: Date,
     default: Date.now,

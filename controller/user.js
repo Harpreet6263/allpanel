@@ -52,7 +52,7 @@ const signin = async (req, res) => {
         if (!errors.isEmpty()) {
             return VALIDATION_ERROR_RESPONSE(res, "VALIDATION_ERROR", errors.array());
         }
-        const { name, password } = req.body;
+        const { name, password } = req.body;        
 
         let user = await Users.findOne({ name });
         if (!user) {
@@ -73,6 +73,7 @@ const signin = async (req, res) => {
                 id: user.id,
                 name: user.name,
                 email: user.email,
+                // status: user.status
             }
         };
         const token = jwt.sign(payload, process.env.JWT_SECRET, {
